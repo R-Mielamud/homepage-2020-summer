@@ -1,0 +1,170 @@
+body {
+  font-family: cursive;
+  transition-property: all;
+  transition-duration: 1s;
+  background-color: #666a;
+}
+
+*::selection {
+  background-color: black;
+  color: grey;
+}
+
+.accordion h3::after {
+  content: "⬇";
+  color: black;
+}
+
+.to-top-btn {
+  color: white;
+  padding: 10px 20px;
+  border: 0 solid #000 !important;
+  border-radius: 10px;
+  background-color: #00f;
+}
+
+h2,
+h3 {
+  text-align: center;
+  margin-bottom: 5px;
+  color: #00e;
+}
+
+@keyframes accordion-show {
+  from {
+    transform: translateY(-150px);
+    opacity: 0;
+    display: none;
+  }
+
+  50% {
+    opacity: 0.1;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+    display: block;
+  }
+}
+
+@keyframes accordion-hide {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+    display: block;
+  }
+
+  50% {
+    opacity: 0.1;
+  }
+
+  to {
+    transform: translateY(-150px);
+    opacity: 0;
+    display: none;
+    height: 0;
+    overflow-y: hidden;
+  }
+}
+
+p,
+a {
+  color: #666a;
+  max-width: 90%;
+  text-align: center;
+  margin-left: 5%;
+  transition-property: all;
+  transition-duration: 0.5s;
+}
+
+.accordion p {
+  animation-duration: 1s;
+  animation-play-state: running;
+  animation-fill-mode: forwards;
+}
+
+h3 {
+  margin-bottom: 5px;
+  color: #99f;
+}
+
+@keyframes headers {
+  from {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(10px);
+    opacity: 0.5;
+  }
+
+  75% {
+    transform: translateX(-10px);
+    opacity: 0.5;
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+h2:hover,
+h3:hover {
+  animation-name: headers;
+  animation-timing-function: linear;
+  animation-duration: 1s;
+}
+
+h3:hover {
+  cursor: grab;
+}
+
+hr {
+  width: 80%;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  font-size: 56px;
+  letter-spacing: 30px;
+  color: white;
+}
+
+p:hover {
+  transform: scale(1.1);
+  background-color: white;
+  box-shadow: 5px 5px 1px 2px grey;
+  border-radius: 20px;
+  border: 10px solid #ddda;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: #77f;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+  margin-left: 20%;
+}
+
+main {
+  width: 900px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 20px solid #55f8;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
